@@ -1,4 +1,4 @@
-#include <sstream>
+#include <sstream> // biblio de Cpp, manipuler chaînes de caractères
 #include <algorithm>
 
 #include "user.h"
@@ -76,6 +76,8 @@ void User::fromFileFormat(const string& line) {
     stringstream ss(line);
     string token;
     
+    // Lire une partie de texte pour placer dans une variable
+    // 3ème paramètre (|) est le délimiteur
     getline(ss, name, '|');
     getline(ss, userId, '|');
     
