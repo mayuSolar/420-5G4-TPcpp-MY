@@ -1,4 +1,4 @@
-#include <sstream>
+#include <sstream> // biblio de Cpp, manipuler chaînes de caractères
 #include <algorithm>
 
 #include "user.h"
