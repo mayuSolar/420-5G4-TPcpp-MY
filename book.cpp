@@ -5,8 +5,11 @@
 
 using namespace std;
 
-// Constructor
+// Default constructor
 Book::Book() : title(""), author(""), isbn(""), isAvailable(true), borrowerId("") {}
+
+// Parameterized constructor
+Book::Book(const string& title, const string& author, const string& isbn) : title(title), author(author), isbn(isbn), isAvailable(true), borrowerId("") {}
 
 // Getters
 string Book::getTitle() const { return title; }
