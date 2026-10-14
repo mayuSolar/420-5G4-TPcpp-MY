@@ -9,8 +9,8 @@ using namespace std;
 User::User() : name(""), userId("") {}
 
 // Parameterized constructor
-User::User(const string& name, const string& userId) 
-    : name(name), userId(userId) {}
+User::User(const string& name) 
+    : name(name), userId("") {}
 
 // Getters
 string User::getName() const { return name; }
