@@ -179,15 +179,17 @@ int main(int argc, char* argv[]) {
             
             case 7: { // Add User
                 string name = getInput("Entrez le nom de l'utilisateur : ");
-                string userId = getInput("Entrez l'ID de l'utilisateur : ");
                 
-                if (library.findUserById(userId)) {
-                    cout << "Erreur : Un utilisateur avec l'ID " << userId << " existe déjà.\n";
+                User newUser(name);
+                bool siValider = library.addUser(newUser);
+
+                 if (siValider) {
+                     cout << "Utilisateur ajouté avec succès !\n";
+                
                 } else {
-                    User newUser(name, userId);
-                    library.addUser(newUser);
-                    cout << "Utilisateur ajouté avec succès !\n";
+                     cout << "Erreur : Un utilisateur avec le même ID existe déjà.\n";
                 }
+
                 pauseForInput();
                 break;
             }
