@@ -225,3 +225,13 @@ int Library::getAvailableBookCount() const {
         });
 }
 int Library::getCheckedOutBookCount() const { return getTotalBooks() - getAvailableBookCount(); }
+
+
+// Sorting books by title
+void Library::sortingByTitle(vector<Book*>& books) {
+    sort(books.begin(), books.end());
+
+    for (Book* book : books) {
+        cout << book->getTitle() << endl;
+    }
+}
