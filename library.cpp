@@ -71,6 +71,9 @@ vector<Book*> Library::searchBooksByAuthor(const string& author) {
             results.push_back(book.get());
         }
     }
+
+    sortingByAuthor(results);
+
     return results;
 }
 
@@ -245,4 +248,17 @@ void Library::sortingByTitle(vector<Book*>& books) {
     for (Book* book : books) {
         cout << book->getTitle() << endl;
     };
+}
+
+// Sorting books by author
+void Library::sortingByAuthor(vector<Book*>& books) {
+
+    std::sort(
+        books.begin(), 
+        books.end(), 
+        [](const Book* a, const Book* b) 
+        {
+            return a->getAuthor() < b->getAuthor();
+        }
+    );
 }
