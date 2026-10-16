@@ -25,6 +25,11 @@ car il représente seulement des nombres positifs, comparativement au ``int``qui
 Lorsque j'ai utilisé ``ìnt``, cela m'a donné un erreur lorsque j'utilisais ``.size()``.
 
 
+# Question 2 : Options de développement possible
+Une autre option de développement serait de programmer avec le langage de programmation PHP. Le PHP produit des sites Web dynamques. Il peut facilement relier une base de données tel que MySQL, qui peut également conserver une grande masse de données. On peut utiliser le C++ pour sa STL, qui inclut les algorithmes de tri, de recherches, et autres. Ces derniers qui facilitent le développement et qui sont très pratiques pour structurer les différentes types de données d'un système de gestion de bibliothèque.
+
+
+
 # Construire le projet
 Vous pouvez utiliser un dev container de base C++ de VScode.
 Le projet utilise cmake, pensez à l'inclure dans votre dev container.
