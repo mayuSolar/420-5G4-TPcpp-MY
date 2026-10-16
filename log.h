@@ -1,12 +1,12 @@
-#include <ctime>
-#include <fstream>
+#include <ctime> // pour date et heure
+#include <fstream> // pour ofstream
 #include <iostream>
 #include <sstream>
 #include <string>
 
 using namespace std;
 
-enum LogLevel 
+enum LogAction 
 { 
     AJOUT_LIVRE, 
     SUPPRIMER_LIVRE, 
@@ -30,9 +30,9 @@ class Log {
 private:
     ofstream logFile;
 
-    string levelToString(LogLevel level)   
+    string levelToString(LogAction action)   
     {
-        switch (level)
+        switch (action)
         {
             case AJOUT_LIVRE:
                 return "AJOUT_LIVRE";
@@ -86,4 +86,16 @@ private:
                 return "UNKNOWN";
         }
     }
+
+public:
+    // Default constructor
+    Log();
+    // Constructor: open log file in append mode
+    Log(const string& filename);
+
+    // Destructor
+    ~Log();
+
+    // Logs a message with a log action
+    void log(LogAction action, const string& message);
 };
