@@ -46,6 +46,10 @@ public:
     int getTotalBooks() const;
     int getAvailableBookCount() const;
     int getCheckedOutBookCount() const;
+
+    // Sorting book data
+    void sortingByTitle(vector<Book*>& books);
+    void sortingByAuthor(vector<Book*>& books);
 };
 
 #endif
