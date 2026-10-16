@@ -85,6 +85,9 @@ vector<Book*> Library::getAvailableBooks() {
             available.push_back(book.get());
         }
     }
+
+    sortingByTitle(available);
+
     return available;
 }
 
@@ -94,6 +97,9 @@ vector<Book*> Library::getAllBooks() {
     for (auto& book : books) {
         allBooks.push_back(book.get());
     }
+
+    sortingByTitle(allBooks);
+
     return allBooks;
 }
 
