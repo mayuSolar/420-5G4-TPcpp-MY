@@ -51,6 +51,9 @@ vector<Book*> Library::searchBooksByTitle(const string& title) {
             results.push_back(book.get());
         }
     }
+
+    sortingByTitle(results);
+
     return results;
 }
 
@@ -229,9 +232,17 @@ int Library::getCheckedOutBookCount() const { return getTotalBooks() - getAvaila
 
 // Sorting books by title
 void Library::sortingByTitle(vector<Book*>& books) {
-    sort(books.begin(), books.end());
+
+    std::sort(
+        books.begin(), 
+        books.end(), 
+        [](const Book* a, const Book* b) 
+        {
+            return a->getTitle() < b->getTitle();
+        }
+    );
 
     for (Book* book : books) {
         cout << book->getTitle() << endl;
-    }
+    };
 }
