@@ -30,7 +30,7 @@ class Log {
 private:
     ofstream logFile;
 
-    string levelToString(LogAction action)   
+    string actionToString(LogAction action)   
     {
         switch (action)
         {
