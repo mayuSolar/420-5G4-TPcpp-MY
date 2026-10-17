@@ -137,6 +137,10 @@ int main(int argc, char* argv[]) {
                     cout << "Livre non trouvé.\n";
                 }
                 pauseForInput();
+
+                message.push_back(isbn);
+                
+                log.saveToFileLogs(SUPPRIMER_LIVRE, message);
                 break;
             }
             
@@ -155,6 +159,10 @@ int main(int argc, char* argv[]) {
                     }
                 }
                 pauseForInput();
+
+                message.push_back(title);
+                
+                log.saveToFileLogs(RECH_LIVRE_TITRE, message);
                 break;
             }
             
@@ -173,17 +181,24 @@ int main(int argc, char* argv[]) {
                     }
                 }
                 pauseForInput();
+
+                message.push_back(author);
+                
+                log.saveToFileLogs(RECH_LIVRE_AUTEUR, message);
                 break;
             }
             
             case 5: // Display All Books
                 library.displayAllBooks();
                 pauseForInput();
+                log.saveToFileLogs(AFFICHAGE_LIVRES, message);
                 break;
             
             case 6: // Display Available Books
                 library.displayAvailableBooks();
                 pauseForInput();
+                
+                log.saveToFileLogs(AFFICHAGE_LIVRES_DISPO, message);
                 break;
             
             case 7: { // Add User
@@ -200,12 +215,20 @@ int main(int argc, char* argv[]) {
                 }
 
                 pauseForInput();
+
+                message.push_back(newUser.getName());
+                message.push_back(newUser.getUserId());
+                message.push_back(to_string(newUser.getBorrowedBooks().size()));
+
+                log.saveToFileLogs(AFFICHAGE_LIVRES, message);
                 break;
             }
             
             case 8: // Display All Users
                 library.displayAllUsers();
                 pauseForInput();
+
+                log.saveToFileLogs(AFFICHAGE_USERS, message);
                 break;
             
             case 9: { // Check Out Book
@@ -218,6 +241,11 @@ int main(int argc, char* argv[]) {
                     cout << "Erreur : Impossible d'emprunter le livre. Vérifiez l'ISBN, l'ID utilisateur et la disponibilité du livre.\n";
                 }
                 pauseForInput();
+
+                message.push_back(isbn);
+                message.push_back(userId);
+
+                log.saveToFileLogs(EMPRUNT, message);
                 break;
             }
             
@@ -230,6 +258,10 @@ int main(int argc, char* argv[]) {
                     cout << "Erreur : Impossible de retourner le livre. Vérifiez l'ISBN et que le livre est bien emprunté.\n";
                 }
                 pauseForInput();
+
+                message.push_back(isbn);
+
+                log.saveToFileLogs(RETOUR, message);
                 break;
             }
             
@@ -240,22 +272,29 @@ int main(int argc, char* argv[]) {
                 cout << "Livres Empruntés : " << library.getCheckedOutBookCount() << "\n";
                 cout << "Total des Utilisateurs : " << library.getAllUsers().size() << "\n";
                 pauseForInput();
+
+                log.saveToFileLogs(STATISTIQUES, message);
                 break;
             }
             
             case 12: { // Save Data
                 if (fileManager.saveLibraryData(library)) {
                     cout << "Données de la bibliothèque sauvegardées avec succès !\n";
+                    message.push_back("Données de la bibliothèque sauvegardées avec succès !");
                 } else {
                     cout << "Erreur lors de la sauvegarde des données de la bibliothèque.\n";
+                    message.push_back("Erreur lors de la sauvegarde des données de la bibliothèque.");
                 }
                 pauseForInput();
+
+                log.saveToFileLogs(SAUVEGARDER, message);
                 break;
             }
             
             case 13: { // Create Backup
                 fileManager.createBackup();
                 pauseForInput();
+                log.saveToFileLogs(CREATE_BACKUP, message);
                 break;
             }
             
@@ -264,11 +303,13 @@ int main(int argc, char* argv[]) {
                 fileManager.saveLibraryData(library);
                 cout << "Merci d'avoir utilisé le Système de Gestion de Bibliothèque Personnelle !\n";
                 running = false;
+                log.saveToFileLogs(QUITTER, message);
                 break;
             
             default:
                 cout << "Choix invalide. Veuillez réessayer.\n";
                 pauseForInput();
+                log.saveToFileLogs(CHOIX_INVALIDE, message);
                 break;
         }
     }

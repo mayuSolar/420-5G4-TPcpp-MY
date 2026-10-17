@@ -16,15 +16,14 @@ enum LogAction
     AFFICHAGE_LIVRES,
     AFFICHAGE_LIVRES_DISPO,
     AJOUT_USER,
+    AFFICHAGE_USERS,
     EMPRUNT,
     RETOUR,
     STATISTIQUES,
-    STAT_TOTAL_LIVRES,
-    STAT_LIVRES_DISPO,
-    STAT_LIVRES_EMPRUNTES,
-    STAT_TOTAL_USERS,
     SAUVEGARDER,
-    QUITTER
+    CREATE_BACKUP,
+    QUITTER,
+    CHOIX_INVALIDE
 };
 
 class Log {
@@ -55,6 +54,9 @@ private:
             
             case AJOUT_USER:
                 return "AJOUT_USER";
+
+            case AFFICHAGE_USERS:
+                return "AFFICHAGE_USERS";
         
             case EMPRUNT:
                 return "EMPPRUNT";
@@ -64,24 +66,18 @@ private:
             
             case STATISTIQUES:
                 return "STATISTIQUES";
-            
-            case STAT_TOTAL_LIVRES:
-                return "STAT_TOTAL_LIVRES";
-
-            case STAT_LIVRES_DISPO:
-                return "STAT_LIVRES_DISPO";
-            
-            case STAT_LIVRES_EMPRUNTES:
-                return "STAT_LIVRES_EMPRUNTES";
-            
-            case STAT_TOTAL_USERS:
-                return "STAT_LIVRES_DISPO";
 
             case SAUVEGARDER:
                 return "SAUVEGARDER";
             
-             case QUITTER:
+            case CREATE_BACKUP:
+                return "CREATE_BACKUP";
+            
+            case QUITTER:
                 return "QUITTER";
+
+            case CHOIX_INVALIDE:
+                return "CHOIX_INVALIDE";
 
             default:
                 return "UNKNOWN";

@@ -4,3 +4,18 @@
 2026-10-17 01:38:13 - [AJOUT_LIVRE] Her|She|3254-53254
 2026-10-16 21:51:00 - [AJOUT_LIVRE] Sur|Adfs|345-234
 2026-10-16 21:52:55 - [AJOUT_LIVRE] Hell|No|75434-345
+2026-10-16 22:28:27 - [AJOUT_LIVRE] La cote|sdf|345-345
+2026-10-16 22:29:08 - [SUPPRIMER_LIVRE] La cote|sdf|345-345|345-345
+2026-10-16 22:29:25 - [AJOUT_LIVRE] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53
+2026-10-16 22:29:42 - [RECH_LIVRE_TITRE] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga
+2026-10-16 22:29:52 - [RECH_LIVRE_AUTEUR] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli
+2026-10-16 22:30:00 - [AFFICHAGE_LIVRES] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli
+2026-10-16 22:30:10 - [AFFICHAGE_LIVRES_DISPO] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli
+2026-10-16 22:30:33 - [AFFICHAGE_LIVRES] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli|Ryan||0
+2026-10-16 22:30:47 - [AFFICHAGE_USERS] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli|Ryan||0
+2026-10-16 22:31:07 - [EMPPRUNT] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli|Ryan||0|63-53|1
+2026-10-16 22:31:26 - [RETOUR] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli|Ryan||0|63-53|1|63-53
+2026-10-16 22:31:31 - [STATISTIQUES] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli|Ryan||0|63-53|1|63-53
+2026-10-16 22:31:38 - [SAUVEGARDER] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli|Ryan||0|63-53|1|63-53|Erreur lors de la sauvegarde des données de la bibliothèque.
+2026-10-16 22:31:44 - [CREATE_BACKUP] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli|Ryan||0|63-53|1|63-53|Erreur lors de la sauvegarde des données de la bibliothèque.
+2026-10-16 22:34:22 - [QUITTER] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli|Ryan||0|63-53|1|63-53|Erreur lors de la sauvegarde des données de la bibliothèque.
