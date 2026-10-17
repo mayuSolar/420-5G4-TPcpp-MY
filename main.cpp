@@ -220,7 +220,7 @@ int main(int argc, char* argv[]) {
                 message.push_back(newUser.getUserId());
                 message.push_back(to_string(newUser.getBorrowedBooks().size()));
 
-                log.saveToFileLogs(AFFICHAGE_LIVRES, message);
+                log.saveToFileLogs(AJOUT_USER, message);
                 break;
             }
             
