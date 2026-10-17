@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <vector>
 
 #include "log.h"
 
@@ -25,7 +26,7 @@ Log::Log(const string& filename)
 Log::~Log() { logFile.close(); }
 
 // Logs a message with log action
-void Log::saveToFileLogs(LogAction action, const string& message)
+void Log::saveToFileLogs(LogAction action, const vector<string>& message)
 {
     // Current timestamp
     time_t now = time(0);
@@ -36,8 +37,9 @@ void Log::saveToFileLogs(LogAction action, const string& message)
     // Create log entry
     ostringstream logEntry;
     logEntry 
-        << "[" << timestamp << "] " 
-        << actionToString(action) << ": " << message 
+        << timestamp << " - " 
+        << "[" << actionToString(action) << "] " 
+        << formatMsgLog(message) 
         << endl;
     
     // Write inside log file
@@ -46,3 +48,16 @@ void Log::saveToFileLogs(LogAction action, const string& message)
         logFile.flush(); //  Immediately write to file
     }
 }
+
+string Log::formatMsgLog(const vector<string>& message) {
+    ostringstream formattedMsg;
+
+    for (size_t i = 0; i < message.size(); i++) {
+        if (i > 0) {
+            formattedMsg << "|";
+        }
+
+        formattedMsg << message[i];
+    }
+    return formattedMsg.str();
+};

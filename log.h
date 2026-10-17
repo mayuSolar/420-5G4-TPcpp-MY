@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -97,5 +98,8 @@ public:
     ~Log();
 
     // Logs a message with a log action
-    void saveToFileLogs(LogAction action, const string& message);
+    void saveToFileLogs(LogAction action, const vector<string>& message);
+
+    // Format message log
+    string formatMsgLog(const vector<string>& message);
 };
