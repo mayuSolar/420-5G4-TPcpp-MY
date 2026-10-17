@@ -25,7 +25,7 @@ Log::Log(const string& filename)
 Log::~Log() { logFile.close(); }
 
 // Logs a message with log action
-void Log::log(LogAction action, const string& message)
+void Log::saveToFileLogs(LogAction action, const string& message)
 {
     // Current timestamp
     time_t now = time(0);

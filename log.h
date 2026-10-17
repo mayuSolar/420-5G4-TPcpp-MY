@@ -97,5 +97,5 @@ public:
     ~Log();
 
     // Logs a message with a log action
-    void log(LogAction action, const string& message);
+    void saveToFileLogs(LogAction action, const string& message);
 };
