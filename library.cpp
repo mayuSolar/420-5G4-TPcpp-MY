@@ -104,7 +104,7 @@ vector<Book*> Library::getAllBooks() {
 }
 
 // Add user to library
-bool Library::addUser(const User& user) {
+bool Library::addUser(User& user) {
     int plusGrandId = 0;
 
     for (size_t i = 0; i < users.size(); i++) {
@@ -122,11 +122,10 @@ bool Library::addUser(const User& user) {
        return false;
     }
 
-    User nouvelUtilisateur = user;
-    nouvelUtilisateur.setUserId(userId);
+    user.setUserId(userId);
 
     // make_unique = créé un objet User et le place dans un pointeur intelligent (unique_ptr)
-    users.push_back(make_unique<User>(nouvelUtilisateur));
+    users.push_back(make_unique<User>(user));
 
     return true;
 }

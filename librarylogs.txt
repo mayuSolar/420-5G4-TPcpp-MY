@@ -19,3 +19,13 @@
 2026-10-16 22:31:38 - [SAUVEGARDER] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli|Ryan||0|63-53|1|63-53|Erreur lors de la sauvegarde des données de la bibliothèque.
 2026-10-16 22:31:44 - [CREATE_BACKUP] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli|Ryan||0|63-53|1|63-53|Erreur lors de la sauvegarde des données de la bibliothèque.
 2026-10-16 22:34:22 - [QUITTER] La cote|sdf|345-345|345-345|Garde|Tulipe|63-53|Ga|Tuli|Ryan||0|63-53|1|63-53|Erreur lors de la sauvegarde des données de la bibliothèque.
+2026-10-16 22:44:49 - [AJOUT_USER] ||0
+2026-10-16 22:45:00 - [AJOUT_USER] ||0|Richard||0
+2026-10-16 22:55:37 - [AJOUT_USER] Tom||0
+2026-10-16 22:55:52 - [AFFICHAGE_USERS] 
+2026-10-16 22:56:25 - [AJOUT_LIVRE] Roi du lion|Shopin|612-345
+2026-10-16 22:56:39 - [AJOUT_USER] Bob||0
+2026-10-16 23:07:01 - [AJOUT_USER] Romeo||0
+2026-10-16 23:09:04 - [AJOUT_USER] Bob||0
+2026-10-16 23:19:36 - [AJOUT_USER] Helen||0
+2026-10-16 23:27:25 - [AJOUT_USER] Merlin|1|0
