@@ -5,6 +5,7 @@
 
 #include "library.h"
 #include "filemanager.h"
+#include "log.h"
 
 using namespace std;
 
@@ -82,6 +83,8 @@ int main(int argc, char* argv[]) {
 
     Library library;
     FileManager fileManager(booksFile, usersFile);
+    Log log("../librarylogs.txt"); // Si existe pas, va créer fichier
+    vector<string> message;
     
     // Load existing data
     cout << "Chargement des données de la bibliothèque...\n";
@@ -116,6 +119,12 @@ int main(int argc, char* argv[]) {
                     cout << "Livre ajouté avec succès !\n";
                 }
                 pauseForInput();
+
+                message.push_back(title);
+                message.push_back(author);
+                message.push_back(isbn);
+                
+                log.saveToFileLogs(AJOUT_LIVRE, message);
                 break;
             }
             
