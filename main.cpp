@@ -94,6 +94,8 @@ int main(int argc, char* argv[]) {
     bool running = true;
     
     while (running) {
+        message.clear();
+        
         displayMenu();
         
         if (!(cin >> choice)) {
@@ -208,18 +210,18 @@ int main(int argc, char* argv[]) {
                 bool siValider = library.addUser(newUser);
 
                  if (siValider) {
-                     cout << "Utilisateur ajouté avec succès !\n";
+                    cout << "Utilisateur ajouté avec succès !\n";
+                    message.push_back(newUser.getName());
+                    message.push_back(newUser.getUserId());
+                    message.push_back(to_string(newUser.getBorrowedBooks().size()));
                 
                 } else {
                      cout << "Erreur : Un utilisateur avec le même ID existe déjà.\n";
+                     message.push_back("Erreur : Un utilisateur avec le même ID existe déjà.");
                 }
 
                 pauseForInput();
-
-                message.push_back(newUser.getName());
-                message.push_back(newUser.getUserId());
-                message.push_back(to_string(newUser.getBorrowedBooks().size()));
-
+                
                 log.saveToFileLogs(AJOUT_USER, message);
                 break;
             }
